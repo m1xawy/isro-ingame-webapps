@@ -1,0 +1,26 @@
+<Files .htaccess>
+	order allow,deny
+	deny from all
+</Files>
+
+#Disable directory listing
+Options -Indexes
+
+#RewriteRules
+RewriteEngine On
+RewriteBase /
+RewriteRule ^config.php - [R=404,L]
+RewriteRule ^help.txt - [R=404,L]
+RewriteRule ^(.*)\.asp$ /index.php?req=$1 [QSA,PT,L]
+
+#RedirectMatches
+RedirectMatch 404 ^/includes/$
+RedirectMatch 404 ^/includes/(.*)\.php$
+RedirectMatch 404 ^/includes/libs/$
+RedirectMatch 404 ^/includes/libs/(.*)\.php$
+RedirectMatch 404 ^/logs/$
+RedirectMatch 404 ^/logs/(.*)\.log$
+RedirectMatch 404 ^/logs/visitor/$
+RedirectMatch 404 ^/logs/visitor/(.*)\.txt$
+RedirectMatch 404 ^/modules/$
+RedirectMatch 404 ^/modules/(.*)\.php$

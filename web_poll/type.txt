@@ -1,0 +1,1 @@
+SroInGameAddr = "192.168.1.101:82/user_certify.php"
